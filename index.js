@@ -1,26 +1,67 @@
-// literal object notation
+// Objects:
+// literal notation of objects
 
-var person = {
-	nationality: 'serbian',
-	name: 'Uros',
-	yearBorn: 1980	
+// var person = {
+// 	name: 'Oggi',
+// 	nationality: 'bulgarian',
+// 	country: 'USA'
+// }
+
+
+// object constructor
+
+function Person(name, nationality, yearBirth){
+	this.name = name;
+	this.nationality = nationality;
+	this.yearBirth = yearBirth
 }
 
-function Person(nationality, name, yearBorn){
-	this.nationality = nationality;
-	this.name = name;
-	this.yearBorn = yearBorn
-	this.age = function(){
-		return 2017 - this.yearBorn
+var bulgarian = new Person('Ivan', 'bulgarian', 1978);
+var serbian = new Person('Uros', 'serbian', 1980)
+
+// prototype inheritance
+
+Person.prototype.age = function(){
+	return 2017 - this.yearBirth
+}
+
+// object extends
+function Bike(wheels, color){
+this.wheels = wheels;
+this.color = color
+}
+
+function Car(){
+Bike.apply(this, arguments)
+}
+
+var newBike = new Bike(2, 'sivler')
+
+var newCar = new Car(4, 'green')
+
+// class concept in ECMA6
+
+// class Bike {
+// 	constructor(wheels, color){
+// 		this.wheels = wheels;
+// 		this.color = color;
+// 	}
+// }
+
+
+// class extends
+
+class Instrument{
+	constructor(name, type){
+		this.name = name;
+		this.type = type;
 	}
 }
 
-var bulgarian = new Person('bulgarian', 'Ivan', 1978)
-var serbian = new Person('serbian','Uros', 1980 )
-var hungarian = new Person('hungarian', 'Gabor', 1976)
+class Piano extends Instrument{
 
-Person.prototype.eyeColor = 'brown';
+}
 
-
+var p = new Instrument('wahlstein', 'string')
 
 
