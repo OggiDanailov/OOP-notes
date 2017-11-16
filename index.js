@@ -64,4 +64,37 @@ class Piano extends Instrument{
 
 var p = new Instrument('wahlstein', 'string')
 
+// real example of Calculator
+
+function Calculator(x,y){
+	this.adding = function(){
+		return x + y
+	}
+	this.subtracting = function(){
+		return x-y
+	}
+	this.multiplying = function(){
+		return x*y
+	}
+	this.dividing = function(){
+		return x/y
+	}
+}
+
+
+// class Calculator{
+// 	constructor(x, y){
+// 		this.adding = function(){
+// 			return x + y
+// 		}
+// 		this.subtracting = function(){
+// 			return x-y
+// 		}
+// 	}
+	
+// }
+
+var a = new Calculator(12,3)
+
+
 
